@@ -1,0 +1,17 @@
+version: "3.9"
+networks:
+  mayowa:
+    driver: bridge
+services:
+  backend:
+    image: "simsol88/hng-bckend"
+    ports:
+      - "7000:7000"
+    networks:
+      - mayowa
+  frontend:
+    image: "simsol88/hng-frntend"
+    ports:
+      - "3000:3000"
+    networks:
+      - mayowa
